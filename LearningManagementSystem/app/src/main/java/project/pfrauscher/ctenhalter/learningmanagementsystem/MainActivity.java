@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
+    public boolean onCreateOptionsMenu(Menu menu) //ctenhalter
 
     {
 
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) { //ctenhalter
 
 
         switch (item.getItemId()){
@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.menuAddSubject:
 
-                Intent addSubjectIntent = new Intent(AddSubjectAc.class,addSubjectActivity);
+                Intent addSubjectIntent = new Intent(this,AddSubjectActivity.class);
+                startActivity(addSubjectIntent);
 
         }
         return super.onOptionsItemSelected(item);
