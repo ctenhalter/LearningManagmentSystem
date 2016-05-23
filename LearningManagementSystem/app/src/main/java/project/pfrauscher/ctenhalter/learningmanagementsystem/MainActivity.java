@@ -3,48 +3,16 @@ package project.pfrauscher.ctenhalter.learningmanagementsystem;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.ContextMenu;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Adapter;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {//ctenhalter
-
-    ListView listSubjects = (ListView) findViewById(R.id.listSubjects);
+public class MainActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {//ctenhalter
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
-
-
-        readFromDatabase ();//fill list
-
-
-        listSubjects.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {//ctenhalter
-
-
-                Intent showAllNotesIntent = new Intent(this,AllNotesActivity.class);
-                startActivity(showAllNotesIntent);
-
-            }
-        });
-
-
-
-
-        registerForContextMenu(listSubjects);
-    }
-
-    private void readFromDatabase() {
-
-
-
+        setContentView(R.layout.activity_main);
     }
 
     @Override
@@ -70,39 +38,5 @@ public class MainActivity extends AppCompatActivity {//ctenhalter
 
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-
-        if ( v.getId() == R.id.listSubjects){
-
-            getMenuInflater().inflate(R.menu.context_menu,menu);
-
-        }
-
-        super.onCreateContextMenu(menu, v, menuInfo);
-
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-
-
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        switch (item.getItemId()){
-
-            case R.id.menuDelete:
-
-                listSubjects.removeViewAt(info.position);
-
-                //DB code    info.id = datenbank id
-
-
-
-                case R.id.menuEdit
-
-        }
-        return super.onContextItemSelected(item);
     }
 }
