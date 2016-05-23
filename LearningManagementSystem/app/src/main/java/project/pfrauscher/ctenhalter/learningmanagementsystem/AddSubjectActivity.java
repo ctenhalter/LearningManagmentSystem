@@ -1,32 +1,33 @@
 package project.pfrauscher.ctenhalter.learningmanagementsystem;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Button;
 
 /**
  * Created by ctenhalter on 20.05.2016.
  */
-public class AddSubjectActivity extends Activity {
+public class AddSubjectActivity extends Activity {//ctenhalter
 
     String subjectname;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {//ctenhalter
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_subject);
+        setContentView(R.layout.add_subject);
     }
 
-    public AddSubjectActivity(String subjectname) {
+    public AddSubjectActivity(String subjectname) {//ctenhalter
         this.subjectname = subjectname;
 
     }
 
     Button btnConfirm = (Button) findViewById(R.id.btnConfirm);
 
-    
+    //DB Code
+
+
+
+
 }
